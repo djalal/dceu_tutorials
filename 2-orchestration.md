@@ -245,7 +245,7 @@ Now that we have a Swarm cluster, you can now re-deploy DockChat on the Swarm Cl
 
 **Step 1 :** The first step is to point all Docker client commands at the Swarm manager instead of a single local engine on **node-0**. To do so, you need to set `DOCKER_HOST` to point at the Swarm Master's IP and TCP port. Remember that Swarm Master is just a container running and listening on port 3375.
 
-`export DOCKER_HOST={node-0-PrivateIP}:3375`
+`export DOCKER_HOST=0.0.0.0:3375`
 
 **Step 2 :** Currently, **docker-compose** does not support build an image across all Swarm nodes. Therefore, you need to first build the image using the Docker client, tag it, push it to Docker Hub, and use that image in docker-compose.yml file.
 
